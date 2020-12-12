@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="yamlfield" status="released" xmlns="http://getsymphony.com/schemas/extension/1.0">
+    <name>YAML Field</name>
+    <description>A field for Symphony CMS that validates and stores YAML formatted data.</description>
+    <repo type="github">https://github.com/pointybeard/symext-yaml-field</repo>
+    <types>
+        <type>Utility</type>
+    </types>
+    <authors>
+        <author>
+            <name github="pointybeard">Alannah Kearney</name>
+            <website>http://www.alannahkearney.com</website>
+        </author>
+    </authors>
+    <releases>
+        <release version="1.0.0" date="2020-12-12" min="2.7.10" max="2.7.x" />
+    </releases>
+</extension>

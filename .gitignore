@@ -1,0 +1,25 @@
+.php_cs.cache
+/vendor/
+/commands
+/content
+/data-sources
+/events
+/fields
+
+### Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+### Backup
+*.bak
+*.gho
+*.ori
+*.orig
+*.tmp

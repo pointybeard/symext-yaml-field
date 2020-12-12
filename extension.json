@@ -1,0 +1,26 @@
+{
+    "id": "symext-yaml-field",
+    "name": "YAML Field",
+    "description": "A field for Symphony CMS that validates and stores YAML formatted data.",
+    "repo": "https://github.com/pointybeard/symext-yaml-field.git",
+    "homepage": "https://github.com/pointybeard/symext-yaml-field",
+    "type": [
+        "Utility"
+    ],
+    "authors": [
+        {
+            "name": "Alannah Kearney",
+            "email": "hi@alannahkearney.com",
+            "homepage": "http://www.alannahkearney.com",
+            "role": "Developer"
+        }
+    ],
+    "releases": [
+        {
+            "version": "1.0.0",
+            "date": "2020-12-12",
+            "min": "2.7.10",
+            "max": "2.x.x"
+        }
+    ]
+}
