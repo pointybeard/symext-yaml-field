@@ -14,7 +14,7 @@ declare(strict_types=1);
 /**
  * A YAML text field.
  */
-class elds_Yaml extends Field
+class FieldYaml extends Field
 {
     public function __construct()
     {
