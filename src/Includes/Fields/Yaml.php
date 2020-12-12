@@ -11,6 +11,8 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
+use Symfony\Component\Yaml\Yaml;
+
 /**
  * A YAML text field.
  */
@@ -144,14 +146,13 @@ class FieldYaml extends Field
         }
 
         try {
-            \Dallgoot\Yaml::parse($data, \Dallgoot\Yaml\Loader::NO_OBJECT_FOR_DATE);
+            Yaml::parse((string)$data);
         } catch (\Exception $ex) {
             $message = sprintf(
-                '‘%s’ contains invalid YAML data. The following error was returned: [%s] <code>%s. %s</code>',
+                '‘%s’ contains invalid YAML data. The following error was returned: [%s] <code>%s</code>',
                 $this->get('label'),
                 $ex->getCode(),
-                $ex->getMessage(),
-                $ex->getPrevious()->getMessage()
+                $ex->getMessage()
             );
 
             return self::__INVALID_FIELDS__;

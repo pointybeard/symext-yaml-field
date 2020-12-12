@@ -25,7 +25,7 @@
     },
     "require": {
         "php": ">=7.4",
-        "dallgoot/yaml": "^0.3.2",
+        "symfony/yaml": "^5.2.0",
         "pointybeard/helpers": "~1.2.0",
         "pointybeard/symphony-extended": "^1.0"
     },
