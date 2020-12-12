@@ -37,7 +37,7 @@ if (false == class_exists('\\extension_yamlfield')) {
             parent::install();
 
             return Symphony::Database()->query(
-                "CREATE TABLE `{$this->tableName}` (
+                "CREATE TABLE IF NOT EXISTS `{$this->tableName}` (
                     `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
                     `field_id` int(11) unsigned NOT NULL,
                     `size` int(3) unsigned NOT NULL,
