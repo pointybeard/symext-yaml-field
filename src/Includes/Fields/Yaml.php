@@ -188,20 +188,36 @@ class FieldYaml extends Field
         $attributes = [];
 
         $value = !empty($data['value'])
-            ? sprintf(
-                '<![CDATA[%s]]>',
-                str_replace(
-                    ']]>',
-                    ']]]]><![CDATA[>',
-                    $data['value']
-                )
-            )
+            ? Yaml::parse($data['value'], 999)
             : $data['value']
         ;
 
-        $wrapper->appendChild(
-            new XMLElement($this->get('element_name'), $value, $attributes)
-        );
+        $buildXmlElementFromArray = function($data, XMLElement $doc) use (&$buildXmlElementFromArray) {
+
+            if(false == is_array($data)) {
+                $doc->setValue($data);
+            } else {
+                $children = [];
+                foreach($data as $name => $value) {
+
+                    // The name isn't a string (probably it is an indexed array) so add underscore at start
+                    // to produce a valid xml element name
+                    if(false == preg_match('@[a-z]@i', (string)$name)) {
+                        $name = "_{$name}";
+                    }
+
+                    $children[] = $buildXmlElementFromArray($value, new XMLElement($name));
+                }
+                $doc->appendChildArray($children);
+            }
+
+            return $doc;
+        };
+
+        $wrapper->appendChild($buildXmlElementFromArray(
+            $value,
+            new XMLElement($this->get('element_name'))
+        ));
     }
 
     /*-------------------------------------------------------------------------
